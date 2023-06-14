@@ -1,4 +1,4 @@
-import { Stage, Layer, Group } from "react-konva";
+import { Stage, Layer, Group, Rect } from "react-konva";
 import Konva from "konva";
 
 import { CanvasImage } from "@/components/CanvasImage";
@@ -163,6 +163,9 @@ const Base = () => {
                 imagePath={slotData.slot1.image}
               />
             </Group>
+            {selectedSlot === "slot1" && (
+              <Rect stroke={"red"} height={400} width={400}></Rect>
+            )}
           </Layer>
           <Layer
             x={400}
@@ -188,6 +191,9 @@ const Base = () => {
                 imagePath={slotData.slot2.image}
               />
             </Group>
+            {selectedSlot === "slot2" && (
+              <Rect stroke={"red"} height={400} width={400}></Rect>
+            )}
           </Layer>
 
           <Layer
@@ -214,6 +220,9 @@ const Base = () => {
                 imagePath={slotData.slot3.image}
               />
             </Group>
+            {selectedSlot === "slot3" && (
+              <Rect stroke={"red"} height={400} width={400}></Rect>
+            )}
           </Layer>
           <Layer
             x={400}
@@ -240,6 +249,9 @@ const Base = () => {
                 text={"Text In a slot"}
               />
             </Group>
+            {selectedSlot === "slot4" && (
+              <Rect stroke={"red"} height={400} width={400}></Rect>
+            )}
           </Layer>
           <Layer>
             <EditableTextInput
