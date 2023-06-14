@@ -4,9 +4,15 @@ import Konva from "konva";
 import { CanvasImage } from "@/components/CanvasImage";
 import { EditableTextInput } from "@/components/EditableTextInput";
 import { useState, useRef } from "react";
-
+interface SlotData {
+  [key: string]: {
+    image: string;
+    rotation: number;
+    scale: number;
+  };
+}
 const Base = () => {
-  const [slotData, setSlotData] = useState({
+  const [slotData, setSlotData] = useState<SlotData>({
     slot1: {
       image: "./img1.jpg",
       rotation: 0,
@@ -21,9 +27,6 @@ const Base = () => {
       image: "./img3.jpg",
       rotation: 0,
       scale: 0.12,
-    },
-    text1: {
-      text: "Text 1",
     },
   });
   const [selectedSlot, setSelectedSlot] = useState<string>("slot1");

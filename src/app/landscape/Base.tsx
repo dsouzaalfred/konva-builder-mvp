@@ -4,8 +4,16 @@ import Konva from "konva";
 import { CanvasImage } from "@/components/CanvasImage";
 import { useState, useRef } from "react";
 
+interface SlotData {
+  [key: string]: {
+    image: string;
+    rotation: number;
+    scale: number;
+  };
+}
+
 const Base = () => {
-  const [slotData, setSlotData] = useState({
+  const [slotData, setSlotData] = useState<SlotData>({
     slot1: {
       image: "./img1.jpg",
       rotation: 0,
